@@ -1,0 +1,14 @@
+name: agent-test
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on:
+      - self-hosted
+      - test1-node
+    steps:
+    - name: checkout
+      uses: actions/checkout@v4.1.0
+    - name: run command
+      shell: bash
+      run: echo hello
