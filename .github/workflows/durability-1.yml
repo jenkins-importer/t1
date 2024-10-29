@@ -1,0 +1,13 @@
+name: durability-1
+on:
+  workflow_dispatch:
+jobs:
+  Create_Large_File:
+    name: Create Large File
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout
+      uses: actions/checkout@v4.1.0
+    - name: sh
+      shell: bash
+      run: dd if=/dev/zero of=/tmp/large_file bs=1M count=1000
